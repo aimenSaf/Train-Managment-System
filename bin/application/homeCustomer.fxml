@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1158.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.homeC">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="256.0" layoutY="183.0" prefHeight="620.0" prefWidth="1158.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="262.0" prefWidth="1158.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="268.0" fitWidth="1158.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../../sda/sdaPro/t2.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="31.0" layoutY="34.0" prefHeight="42.0" prefWidth="446.0" text="Search for Train Tickets" textFill="WHITE">
+                           <font>
+                              <Font name="Britannic Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="destinationComboBox" layoutX="406.0" layoutY="86.0" onAction="#customerLocationList" prefHeight="38.0" prefWidth="217.0" promptText="Enter destination" style="-fx-background-color: #FFFFFF;" />
+                        <ComboBox fx:id="originComboBox" layoutX="100.0" layoutY="86.0" onAction="#trainFromList" prefHeight="38.0" prefWidth="217.0" promptText="Enter origin" style="-fx-background-color: #FFFFFF;" />
+                        <DatePicker fx:id="dateCustomer" layoutX="199.0" layoutY="151.0" promptText="Choose Date" style="-fx-background-color: #FFFFFF;" />
+                        <Button fx:id="checkingButton" layoutX="187.0" layoutY="197.0" mnemonicParsing="false" onAction="#checkAvailability" style="-fx-background-color: crimson;" text="Check Availability" textFill="WHITE">
+                           <font>
+                              <Font name="Trebuchet MS Bold" size="17.0" />
+                           </font></Button>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="39.0" layoutX="362.0" layoutY="86.0" stroke="WHITE" strokeType="INSIDE" width="50.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="39.0" layoutX="57.0" layoutY="86.0" stroke="WHITE" strokeType="INSIDE" width="50.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="154.0" layoutY="151.0" stroke="WHITE" strokeType="INSIDE" width="50.0" />
+                        <ImageView fitHeight="24.0" fitWidth="32.0" layoutX="375.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../sda/sdaPro/dIcon-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="22.0" fitWidth="24.0" layoutX="70.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../sda/sdaPro/a1-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="21.0" fitWidth="56.0" layoutX="324.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../sda/sdaPro/a2-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="logoutCustomerhomeButton" layoutX="1036.0" layoutY="15.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: transparent;" text="LOGOUT" textFill="WHITE">
+                           <font>
+                              <Font name="Britannic Bold" size="22.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <bottom>
+                  <AnchorPane prefHeight="353.0" prefWidth="1158.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="customerHomedefault" prefHeight="353.6" prefWidth="1158.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="68.0" layoutY="17.0" prefHeight="298.0" prefWidth="1064.0">
+                                 <children>
+                                    <ImageView fitHeight="193.0" fitWidth="260.0" layoutX="47.0" layoutY="99.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../../../sda/sdaPro/hunza.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" layoutX="48.0" layoutY="139.0" prefHeight="63.0" prefWidth="258.0" text="HUNZA" textFill="WHITE">
+                                       <font>
+                                          <Font name="Trebuchet MS Bold" size="39.0" />
+                                       </font>
+                                    </Label>
+                                    <Line endX="452.4000244140625" endY="-1.52587890625E-5" layoutX="521.0" layoutY="71.0" startX="-460.4000244140625" startY="-1.52587890625E-5" />
+                                 </children>
+                              </AnchorPane>
+                              <ImageView fitHeight="193.0" fitWidth="260.0" layoutX="458.0" layoutY="115.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../sda/sdaPro/k2.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="193.0" fitWidth="260.0" layoutX="787.0" layoutY="115.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../sda/sdaPro/isl.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="492.0" layoutY="24.0" text="DESTINATIONS">
+                                 <font>
+                                    <Font name="Trebuchet MS Bold" size="29.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="459.0" layoutY="155.0" prefHeight="63.0" prefWidth="258.0" text="KARACHI" textFill="WHITE">
+                                 <font>
+                                    <Font name="Trebuchet MS Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="788.0" layoutY="148.0" prefHeight="63.0" prefWidth="258.0" text="ISLAMABAD" textFill="WHITE">
+                                 <font>
+                                    <Font name="Trebuchet MS Bold" size="39.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="bookingShowingToCustomerPane" prefHeight="353.6" prefWidth="1158.4" style="-fx-background-color: #FFFFFF;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="17.0" layoutY="22.0" prefHeight="314.0" prefWidth="1126.0" style="-fx-background-color: #e6e6fa;">
+                                 <children>
+                                    <TableView fx:id="showCustomerBookingTableView" layoutX="13.0" layoutY="9.0" onMouseClicked="#SelectCustomerShowBookingData" prefHeight="294.0" prefWidth="574.0">
+                                      <columns>
+                                        <TableColumn fx:id="srNo_col_show" prefWidth="75.0" text="Sr. No" />
+                                        <TableColumn fx:id="trainName_col_show" prefWidth="75.0" text="Train Name" />
+                                          <TableColumn fx:id="destination_col_show" prefWidth="75.0" text="Destination" />
+                                          <TableColumn fx:id="origin_col_show" prefWidth="75.0" text="Origin" />
+                                          <TableColumn fx:id="departureT_col_show" prefWidth="97.59991455078125" text="Departure Time" />
+                                          <TableColumn fx:id="arrivalT_col_show" prefWidth="97.59991455078125" text="Arrival Time" />
+                                          <TableColumn fx:id="price_col_show" prefWidth="75.0" text="Price" />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="624.0" layoutY="39.0" text="First Name" />
+                                    <Label layoutX="624.0" layoutY="72.0" text="Last Name" />
+                                    <TextField fx:id="Fname_customer_box" layoutX="697.0" layoutY="35.0" promptText="enter" />
+                                    <TextField fx:id="Lname_customer_box" layoutX="697.0" layoutY="68.0" promptText="enter" />
+                                    <Label layoutX="624.0" layoutY="120.0" text="Destination" />
+                                    <TextField fx:id="destination_customer_box" layoutX="697.0" layoutY="116.0" promptText="enter" />
+                                    <Label layoutX="624.0" layoutY="148.0" text="Origin" />
+                                    <TextField fx:id="origin_customer_box" layoutX="697.0" layoutY="144.0" promptText="enter" />
+                                    <Label layoutX="874.0" layoutY="107.0" text="TOTAL:    $" />
+                                    <TextField fx:id="total_customer_box" layoutX="945.0" layoutY="103.0" />
+                                    <Button fx:id="proceedButton" layoutX="903.0" layoutY="157.0" mnemonicParsing="false" onAction="#proceedToPayment" prefHeight="51.0" prefWidth="194.0" text="PROCEED TO PAYMENT">
+                                       <font>
+                                          <Font name="Trebuchet MS" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="593.0" layoutY="201.0" text="Time of departure" />
+                                    <TextField fx:id="timeD_customer_box" layoutX="697.0" layoutY="197.0" promptText="enter" />
+                                    <Label layoutX="601.0" layoutY="229.0" text="Time of arrival:" />
+                                    <TextField fx:id="timeA_customer_box" layoutX="697.0" layoutY="225.0" promptText="enter" />
+                                    <Label layoutX="903.0" layoutY="39.0" text="Seat# " />
+                                    <ComboBox fx:id="seatCustomer_comboBox" layoutX="945.0" layoutY="35.0" onAction="#ticketNum_TrainList" prefWidth="150.0" />
+                                    <TextField fx:id="trainID_box" layoutX="698.0" layoutY="265.0" />
+                                    <Label layoutX="620.0" layoutY="269.0" text="Train ID" />
+                                    <Label layoutX="906.0" layoutY="72.0" text="Type:" />
+                                    <ComboBox fx:id="type_comboBox" layoutX="944.0" layoutY="68.0" onAction="#typeTrainList" prefWidth="150.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="PaymentPane" layoutX="238.0" layoutY="46.0" prefHeight="353.6" prefWidth="1158.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="31.0" layoutY="32.0" prefHeight="286.0" prefWidth="1095.0" style="-fx-background-color: #C0C0C0;">
+                                 <children>
+                                    <Label layoutX="376.0" layoutY="22.0" text="How would you like to pay?">
+                                       <font>
+                                          <Font name="Trebuchet MS" size="28.0" />
+                                       </font>
+                                    </Label>
+                                    <Line endX="2.4000244140625" endY="99.60003662109375" layoutX="504.0" layoutY="149.0" startX="2.4000244140625" startY="-78.80000305175781" />
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GHOSTWHITE" height="173.0" layoutX="169.0" layoutY="70.0" stroke="BLACK" strokeType="INSIDE" width="243.0" />
+                                    <Button fx:id="creditCardButton" layoutX="243.0" layoutY="202.0" mnemonicParsing="false" onAction="#switchToDiscountPage" style="-fx-background-color: transparent; -fx-border-color: #4169e1; -fx-border-width: 3px 3px 3px 3px; -fx-border-radius: 20;" text="CREDIT CARD" />
+                                    <ImageView fitHeight="120.0" fitWidth="216.0" layoutX="231.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../sda/sdaPro/cc3-removebg-preview.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GHOSTWHITE" height="173.0" layoutX="597.0" layoutY="73.0" stroke="BLACK" strokeType="INSIDE" width="243.0" />
+                                    <ImageView fitHeight="120.0" fitWidth="216.0" layoutX="658.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../sda/sdaPro/m2-removebg-preview.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="cashButton" layoutX="675.0" layoutY="202.0" mnemonicParsing="false" onAction="#switchToDiscountPage" prefHeight="32.0" prefWidth="86.0" style="-fx-background-color: transparent; -fx-border-color: #4169e1; -fx-border-width: 3px 3px 3px 3px; -fx-border-radius: 20;" text="CASH" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="discountPane" layoutX="119.0" layoutY="21.0" prefHeight="353.6" prefWidth="1158.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="42.0" layoutY="36.0" prefHeight="285.0" prefWidth="410.0" style="-fx-background-color: #a9a9a9;">
+                                 <children>
+                                    <Label layoutX="33.0" layoutY="23.0" text="DISCOUNTS &amp; PROMOTIONS" underline="true">
+                                       <font>
+                                          <Font name="Trebuchet MS" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="45.0" layoutY="62.0" text="Would you like to avail a discount?">
+                                       <font>
+                                          <Font name="Trebuchet MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="discountTableView" layoutX="19.0" layoutY="94.0" onMouseClicked="#SelectDiscountData" prefHeight="83.0" prefWidth="363.0">
+                                      <columns>
+                                        <TableColumn fx:id="Id_col_discount" prefWidth="75.0" text="ID" />
+                                        <TableColumn fx:id="details_col_discount" prefWidth="123.20002746582031" text="DETAILS" />
+                                          <TableColumn fx:id="amt_col_dsicount" prefWidth="164.79998779296875" text="AMOUNT OFF" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="applyButton" layoutX="175.0" layoutY="215.0" mnemonicParsing="false" onAction="#applyDiscount" text="APPLY" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="566.0" layoutY="36.0" prefHeight="285.0" prefWidth="410.0" style="-fx-background-color: #a9a9a9;">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="67.0" layoutY="23.0" prefHeight="26.0" prefWidth="280.0" text="QUERIES" underline="true">
+                                       <font>
+                                          <Font name="Trebuchet MS" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea fx:id="queryBox" layoutX="67.0" layoutY="89.0" prefHeight="162.0" prefWidth="200.0" />
+                                    <Label layoutX="73.0" layoutY="60.0" text="Please enter any queries you might have">
+                                       <font>
+                                          <Font name="Trebuchet MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children></AnchorPane>
+                              <AnchorPane layoutX="1028.0" layoutY="133.0" prefHeight="86.0" prefWidth="86.0">
+                                 <children>
+                                    <Button fx:id="doneButton" layoutX="17.0" layoutY="31.0" mnemonicParsing="false" onAction="#finish" text="DONE" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </bottom>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
